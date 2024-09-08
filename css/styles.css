@@ -1,0 +1,249 @@
+@charset "UTF-8";
+@import 'reset.css';
+@import 'https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap';
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: #E9DED4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .wrapper {
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+.header .wrapper .logo__img {
+  z-index: 2;
+  height: auto; /* Сохранять пропорции логотипа */
+}
+@media (max-width: 1366px) {
+  .header .wrapper {
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+}
+@media (max-width: 768px) {
+  .header .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.main {
+  height: 100vh;
+  background-color: rgba(255, 114, 114, 0);
+}
+.main .chess-main {
+  width: 100%;
+  height: 700px;
+  margin-top: -60px;
+  background-color: #E9DED4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Скрываются все элементы, выходящие за пределы блока */
+  position: relative;
+}
+.main .chess-main__content {
+  max-width: 1200px; /* Ширина контента */
+  width: 100%;
+  margin-top: -80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+.main .chess-main__content p {
+  width: 542px;
+  font-family: "Merriweather", serif;
+  font-size: 60px;
+  font-weight: 400;
+  color: #313131;
+}
+.main .chess-main__content .description {
+  text-align: center;
+  width: 542px;
+  font-family: "Golos Text", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 24px;
+  color: #313131;
+}
+.main .chess-main__content .btns {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 40px;
+}
+.main .chess-main__content .btns .btn-add {
+  width: 263px;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Golos Text", sans-serif;
+  font-weight: 500;
+  background-color: #1F1F1F;
+  padding: 12px 49px;
+  border-radius: 66px;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+}
+.main .chess-main__content .btns .btn-add:hover {
+  color: #1F1F1F;
+  background-color: #FBCE51;
+}
+.main .chess-main__content .btns .btn-details {
+  width: 263px;
+  color: #1F1F1F;
+  font-size: 16px;
+  font-family: "Golos Text", sans-serif;
+  font-weight: 500;
+  border: 2px solid #1F1F1F;
+  padding: 10px 85px;
+  border-radius: 66px;
+}
+.main .chess-main__content .btns .btn-details:hover {
+  color: #ffffff;
+  background-color: #1F1F1F;
+}
+@media (max-width: 1366px) {
+  .main .chess-main__content {
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+}
+@media (max-width: 768px) {
+  .main .chess-main__content {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    margin-top: -260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    position: relative;
+  }
+  .main .chess-main__content p {
+    width: 100%;
+    font-family: "Merriweather", serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #313131;
+  }
+  .main .chess-main__content .description {
+    text-align: left;
+    width: 100%;
+    font-family: "Golos Text", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 16px;
+    color: #313131;
+  }
+  .main .chess-main__content .btns {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+    width: 100%;
+  }
+  .main .chess-main__content .btns .btn-add {
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Golos Text", sans-serif;
+    font-weight: 500;
+    background-color: #1F1F1F;
+    padding: 12px 18px;
+    border-radius: 66px;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  .main .chess-main__content .btns .btn-add:hover {
+    color: #1F1F1F;
+    background-color: #FBCE51;
+  }
+  .main .chess-main__content .btns .btn-details {
+    width: 100%;
+    color: #1F1F1F;
+    font-size: 16px;
+    font-family: "Golos Text", sans-serif;
+    font-weight: 500;
+    background-color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 66px;
+  }
+  .main .chess-main__content .btns .btn-details:hover {
+    color: #ffffff;
+    background-color: #1F1F1F;
+  }
+}
+.main .chess-main .background_texture__img {
+  mix-blend-mode: color-burn; /* Наложение с использованием эффекта "color burn" */
+  opacity: 0.8;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Изображение масштабируется, чтобы заполнить контейнер, сохраняя пропорции */
+}
+.main .chess-main .background_chess__img {
+  position: absolute;
+  top: 0;
+  width: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 768px) {
+  .main .chess-main {
+    height: 812px;
+  }
+  .main .chess-main .background_chess__img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: auto;
+    height: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.main .ticker {
+  width: 100%; /* Ширина ленты */
+  overflow: hidden; /* Скрываем текст за границами блока */
+  background-color: #F54932; /* Цвет фона ленты */
+  color: #fff; /* Цвет текста */
+  white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+  box-sizing: border-box;
+  padding: 10px 0; /* Отступы сверху и снизу */
+  /* Анимация */
+}
+.main .ticker__content {
+  font-size: 22px;
+  font-family: "Merriweather", serif;
+  display: inline-block;
+  padding-right: 100px; /* Расстояние между повторяющимися блоками */
+  animation: tickerAnimation 30s linear infinite; /* Анимация движения текста */
+}
+@keyframes tickerAnimation {
+  0% {
+    transform: translateX(0); /* Текст начинает справа */
+  }
+  100% {
+    transform: translateX(-100%); /* Текст уходит влево за границы */
+  }
+}/*# sourceMappingURL=styles.css.map */
