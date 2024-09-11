@@ -321,6 +321,7 @@ $text-font-family: "Golos Text", sans-serif;
 
   .chess-table{
     height: 600px;
+    padding-top: 32px;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
@@ -330,7 +331,7 @@ $text-font-family: "Golos Text", sans-serif;
     &__content{
       background-color: #ffffff;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       max-width: 1200px;
       width: 100%;
@@ -339,8 +340,9 @@ $text-font-family: "Golos Text", sans-serif;
 
       .men_chess {
         opacity: 0.8;
+        top: 0;
+        left: 0;
         z-index: 0;
-        position: absolute;
         width: 474px;
         height: auto;
         object-fit: cover; /* Изображение масштабируется, чтобы заполнить контейнер, сохраняя пропорции */
@@ -351,8 +353,45 @@ $text-font-family: "Golos Text", sans-serif;
         position: absolute;
         top: 0;
         width: 474px;
-        height: 400px;
+        height: 300px;
         object-fit: cover;
+      }
+
+      .table{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .styled-table {
+          width: 100%;
+          margin: 20px auto;
+          border-collapse: collapse; /* Убираем двойные границы */
+          font-family: $text-font-family;
+          font-size: 20px;
+        }
+        
+        .styled-table th, .styled-table td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        .styled-table td {
+            border-right: 1px solid #ddd; /* Границы между столбцами */
+            border-bottom: 1px solid #ddd; /* Границы между строками */
+        }
+        
+        .styled-table th {
+            font-weight: bold;
+            border-bottom: 2px solid #f54932; /* Толстая линия под заголовками */
+        }
+        
+        .styled-table tr td:last-child {
+            border-right: none; /* Убираем правую границу у последней колонки */
+        }
+        
+        .styled-table tr:last-child td {
+            border-bottom: none; /* Убираем нижнюю границу у последней строки */
+        }
       }
     }
   }

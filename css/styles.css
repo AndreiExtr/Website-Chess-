@@ -301,6 +301,7 @@
 }
 .main .chess-table {
   height: 600px;
+  padding-top: 32px;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
@@ -310,7 +311,7 @@
 .main .chess-table__content {
   background-color: #ffffff;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   max-width: 1200px;
   width: 100%;
@@ -319,8 +320,9 @@
 }
 .main .chess-table__content .men_chess {
   opacity: 0.8;
+  top: 0;
+  left: 0;
   z-index: 0;
-  position: absolute;
   width: 474px;
   height: auto;
   -o-object-fit: cover;
@@ -331,7 +333,37 @@
   position: absolute;
   top: 0;
   width: 474px;
-  height: 400px;
+  height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.main .chess-table__content .table {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.main .chess-table__content .table .styled-table {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse; /* Убираем двойные границы */
+  font-family: "Golos Text", sans-serif;
+  font-size: 20px;
+}
+.main .chess-table__content .table .styled-table th, .main .chess-table__content .table .styled-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+.main .chess-table__content .table .styled-table td {
+  border-right: 1px solid #ddd; /* Границы между столбцами */
+  border-bottom: 1px solid #ddd; /* Границы между строками */
+}
+.main .chess-table__content .table .styled-table th {
+  font-weight: bold;
+  border-bottom: 2px solid #f54932; /* Толстая линия под заголовками */
+}
+.main .chess-table__content .table .styled-table tr td:last-child {
+  border-right: none; /* Убираем правую границу у последней колонки */
+}
+.main .chess-table__content .table .styled-table tr:last-child td {
+  border-bottom: none; /* Убираем нижнюю границу у последней строки */
 }/*# sourceMappingURL=styles.css.map */
