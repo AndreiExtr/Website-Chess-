@@ -246,4 +246,34 @@
   100% {
     transform: translateX(-100%); /* Текст уходит влево за границы */
   }
+}
+.main .chess-title {
+  height: 350px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .chess-title__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  font-size: 36px;
+  font-family: "Merriweather", serif;
+}
+.main .chess-title__content .oval {
+  top: 50%; /* Центрируем овал по вертикали */
+  width: 394px;
+  background-color: red; /* Цвет овала */
+  border-radius: 50%; /* Делаем его овальным */
+  overflow: hidden; /* Скрываем лишние части изображения */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .chess-title__content .oval img {
+  width: 400px; /* Изображение растянется по ширине овала */
+  height: auto;
 }/*# sourceMappingURL=styles.css.map */
