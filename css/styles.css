@@ -276,4 +276,25 @@
 .main .chess-title__content .oval img {
   width: 400px; /* Изображение растянется по ширине овала */
   height: auto;
+}
+@media (max-width: 1366px) {
+  .main .chess-title__content {
+    padding-top: 72px;
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+}
+@media (max-width: 900px) {
+  .main .chess-title__content {
+    padding-top: 72px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+@media (max-width: 900px) {
+  .main .chess-title {
+    height: 100%;
+  }
 }/*# sourceMappingURL=styles.css.map */

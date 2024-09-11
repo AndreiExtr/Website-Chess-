@@ -297,6 +297,24 @@ $text-font-family: "Golos Text", sans-serif;
           width: 400px; /* Изображение растянется по ширине овала */
           height: auto;
         }
+
+        @media (max-width: 1366px) {
+          padding-top: 72px;
+          padding-left: 72px;
+          padding-right: 72px;
+        }
+
+        @media (max-width: 900px) {
+          padding-top: 72px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          gap: 32px;
+        }
+    }
+
+    @media (max-width: 900px) {
+      height: 100%;
     }
   }
 }
