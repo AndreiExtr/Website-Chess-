@@ -276,6 +276,7 @@
 .main .chess-title__content .oval img {
   width: 400px; /* Изображение растянется по ширине овала */
   height: auto;
+  filter: brightness(80%); /* Затемняем изображение */
 }
 @media (max-width: 1366px) {
   .main .chess-title__content {
@@ -297,4 +298,40 @@
   .main .chess-title {
     height: 100%;
   }
+}
+.main .chess-table {
+  height: 600px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.main .chess-table__content {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  font-size: 36px;
+  font-family: "Merriweather", serif;
+}
+.main .chess-table__content .men_chess {
+  opacity: 0.8;
+  z-index: 0;
+  position: absolute;
+  width: 474px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover; /* Изображение масштабируется, чтобы заполнить контейнер, сохраняя пропорции */
+}
+.main .chess-table__content .men_chess_fon {
+  mix-blend-mode: color-burn;
+  position: absolute;
+  top: 0;
+  width: 474px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=styles.css.map */
