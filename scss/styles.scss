@@ -364,7 +364,6 @@ $text-font-family: "Golos Text", sans-serif;
     }
 
     &__content{
-      background-color: #ffffff;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -498,6 +497,157 @@ $text-font-family: "Golos Text", sans-serif;
             font-size: 18px;
           }
         }
+      }
+    }
+  }
+
+  .chess-stages{
+    height: 600px;
+    padding-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media (max-width: 1366px) {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    &__content{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+      max-width: 1200px;
+      width: 100%;
+      font-size: 36px;
+      font-family: $title-font-family;
+
+      p{
+        width: 828px;
+        font-size: 54px;
+        font-family: $title-font-family;
+
+        .subtitle {
+          color: #3057A2;
+          font-size: 20px;
+          font-weight: 400;
+          font-family: $text-font-family;
+          word-wrap: break-word; /* Перенос длинных слов */
+          white-space: normal; /* Перенос строк, если длинные */
+          display: inline-block; /* Обеспечивает перенос и правильное отображение */
+          margin-top: 10px; /* Можно добавить небольшой отступ для красоты */
+          cursor: pointer;
+
+          &:hover{
+            color: #0059ff; 
+          }
+        }
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 блока по горизонтали */
+        gap: 20px; /* Промежуток между блоками */
+        margin-top: 20px;
+        height: 400px;
+        width: 100%;
+
+        .grid-item {
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: row;
+          gap: 16px;
+          background-image: url('/img/background_texture1.png'); /* Замените 'your-image-url.jpg' на путь к вашей картинке */
+          background-size: cover; /* Картинка масштабируется, чтобы заполнить весь блок */
+          background-position: center; /* Центрируем картинку */
+          padding: 16px 16px 16px 60px;
+          text-align: left;
+          font-weight: 400;
+          font-size: 20px;
+          font-family: $text-font-family;
+          word-wrap: break-word; /* Перенос длинных слов */
+          position: relative;
+        }
+
+        /* Второе изображение через псевдоэлемент */
+        .grid-item::before {
+          mix-blend-mode: color-burn;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('/img/background_texture.png'); /* Второе фоновое изображение */
+          background-size: cover;
+          background-position: center;
+          opacity: 0.8;
+          z-index: 1;
+        }
+
+        .circle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 36px;
+          height: 36px;
+          background-color: #ffffff;
+          color: #313131;
+          border-radius: 50%;
+          font-size: 20px;
+          font-weight: 600;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+        }
+
+        .airplane-image {
+          width: 350px;
+          height: auto;
+          position: absolute;
+          right: -70px;
+          top: 30%;
+          bottom: 0;
+          transform: translateY(-50%);
+        }
+      
+
+        /* Объединяем Блок 3 и Блок 6 по вертикали */
+        .grid-item-3 {
+            grid-row: span 2; /* Занимает 2 строки по вертикали */
+        }
+
+        /* Скрываем Блок 6, так как он объединен с Блоком 3 */
+        .grid-item-6 {
+            display: none;
+        }
+
+        /* Объединяем Блоки 8 и 9 по горизонтали */
+        .grid-item-8 {
+            grid-column: span 2; /* Занимает 2 колонки по горизонтали */
+        }
+
+        /* Скрываем Блок 9, так как он объединен с Блоком 8 */
+        .grid-item-9 {
+            display: none;
+        }
+      }
+
+      @media (max-width: 1366px) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        padding: 72px;
+      }
+
+      @media (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
       }
     }
   }
