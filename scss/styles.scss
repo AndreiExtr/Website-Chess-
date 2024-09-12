@@ -282,23 +282,6 @@ $text-font-family: "Golos Text", sans-serif;
       font-size: 36px;
       font-family: $title-font-family;
 
-        .oval {
-          top: 50%; /* Центрируем овал по вертикали */
-          width: 394px;
-          background-color: red; /* Цвет овала */
-          border-radius: 50%; /* Делаем его овальным */
-          overflow: hidden; /* Скрываем лишние части изображения */
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .oval img {
-          width: 400px; /* Изображение растянется по ширине овала */
-          height: auto;
-          filter: brightness(80%); /* Затемняем изображение */
-        }
-
         @media (max-width: 1366px) {
           padding-top: 72px;
           padding-left: 72px;
@@ -312,6 +295,50 @@ $text-font-family: "Golos Text", sans-serif;
           flex-direction: column;
           gap: 32px;
         }
+
+        @media (max-width: 768px) {
+          font-size: 28px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .text{
+          width: 100%;
+          @media (max-width: 768px) {
+            font-size: 28px;
+          }
+        }
+
+        .oval {
+          top: 50%; /* Центрируем овал по вертикали */
+          width: 394px;
+          background-color: red; /* Цвет овала */
+          border-radius: 50%; /* Делаем его овальным */
+          overflow: hidden; /* Скрываем лишние части изображения */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @media (max-width: 450px) {
+            width: 300px; /* Изображение растянется по ширине овала */
+            height: auto;
+          }
+
+          img {
+            width: 400px; /* Изображение растянется по ширине овала */
+            height: auto;
+            filter: brightness(80%); /* Затемняем изображение */
+
+            @media (max-width: 450px) {
+              width: 300px; /* Изображение растянется по ширине овала */
+              height: auto;
+            }
+          }
+        }
+    }
+
+    @media (max-width: 1366px) {
+      height: auto;
     }
 
     @media (max-width: 900px) {
@@ -328,6 +355,14 @@ $text-font-family: "Golos Text", sans-serif;
     align-items: center;
     position: relative;
 
+    @media (max-width: 1366px) {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+    }
+
     &__content{
       background-color: #ffffff;
       display: flex;
@@ -337,6 +372,19 @@ $text-font-family: "Golos Text", sans-serif;
       width: 100%;
       font-size: 36px;
       font-family: $title-font-family;
+
+      @media (max-width: 1366px) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        padding: 72px;
+      }
+
+      @media (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
 
       .men_chess {
         opacity: 0.8;
@@ -353,7 +401,6 @@ $text-font-family: "Golos Text", sans-serif;
         position: absolute;
         top: 0;
         width: 474px;
-        height: 300px;
         object-fit: cover;
       }
 
@@ -362,35 +409,90 @@ $text-font-family: "Golos Text", sans-serif;
         flex-direction: column;
         height: 100%;
 
+        @media (max-width: 1366px) {
+          width: 100%;
+        }
+
         .styled-table {
           width: 100%;
           margin: 20px auto;
           border-collapse: collapse; /* Убираем двойные границы */
           font-family: $text-font-family;
           font-size: 20px;
-        }
-        
-        .styled-table th, .styled-table td {
+
+          @media (max-width: 500px) {
+            tbody, 
+            tr, 
+            th, 
+            td {
+              display: block;
+              width: 100%;
+            }
+          
+            /* Убираем границы столбцов */
+            td {
+              border-right: none;
+              padding: 10px;
+              position: relative;
+            }
+          
+            /* Скрываем первую ячейку */
+            td:first-child {
+              display: none;
+            }
+          
+            /* Добавляем заголовок из data-label в ячейках */
+            td:last-child:before {
+              content: attr(data-label); /* Динамически добавляем заголовок из data-label */
+              font-weight: 400;
+              display: block;
+              margin-bottom: 5px;
+              color: #818181;
+            }
+          }
+
+          th, td {
             padding: 12px 15px;
             text-align: left;
-        }
-        
-        .styled-table td {
-            border-right: 1px solid #ddd; /* Границы между столбцами */
-            border-bottom: 1px solid #ddd; /* Границы между строками */
-        }
-        
-        .styled-table th {
-            font-weight: bold;
-            border-bottom: 2px solid #f54932; /* Толстая линия под заголовками */
-        }
-        
-        .styled-table tr td:last-child {
+          }
+
+          td {
+            border-right: 2px solid #D0D0D0; /* Границы между столбцами */
+            border-bottom: 2px solid #D0D0D0; /* Границы между строками */
+          }
+
+          tr td:last-child {
             border-right: none; /* Убираем правую границу у последней колонки */
-        }
-        
-        .styled-table tr:last-child td {
+          }
+
+          tr:last-child td {
             border-bottom: none; /* Убираем нижнюю границу у последней строки */
+          }
+        }
+  
+        &__title{
+          @media (max-width: 1366px) {
+            width: 100%;
+          }
+
+          @media (max-width: 768px) {
+            font-size: 28px;
+          }
+        }
+
+        &__link{
+          color: #3057A2; 
+          font-size: 20px; 
+          font-weight: 400;
+          cursor: pointer;
+
+          &:hover{
+            color: #0059ff; 
+          }
+
+          @media (max-width: 768px) {
+            font-size: 18px;
+          }
         }
       }
     }

@@ -263,21 +263,6 @@
   font-size: 36px;
   font-family: "Merriweather", serif;
 }
-.main .chess-title__content .oval {
-  top: 50%; /* Центрируем овал по вертикали */
-  width: 394px;
-  background-color: red; /* Цвет овала */
-  border-radius: 50%; /* Делаем его овальным */
-  overflow: hidden; /* Скрываем лишние части изображения */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.main .chess-title__content .oval img {
-  width: 400px; /* Изображение растянется по ширине овала */
-  height: auto;
-  filter: brightness(80%); /* Затемняем изображение */
-}
 @media (max-width: 1366px) {
   .main .chess-title__content {
     padding-top: 72px;
@@ -294,6 +279,53 @@
     gap: 32px;
   }
 }
+@media (max-width: 768px) {
+  .main .chess-title__content {
+    font-size: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.main .chess-title__content .text {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .main .chess-title__content .text {
+    font-size: 28px;
+  }
+}
+.main .chess-title__content .oval {
+  top: 50%; /* Центрируем овал по вертикали */
+  width: 394px;
+  background-color: red; /* Цвет овала */
+  border-radius: 50%; /* Делаем его овальным */
+  overflow: hidden; /* Скрываем лишние части изображения */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 450px) {
+  .main .chess-title__content .oval {
+    width: 300px; /* Изображение растянется по ширине овала */
+    height: auto;
+  }
+}
+.main .chess-title__content .oval img {
+  width: 400px; /* Изображение растянется по ширине овала */
+  height: auto;
+  filter: brightness(80%); /* Затемняем изображение */
+}
+@media (max-width: 450px) {
+  .main .chess-title__content .oval img {
+    width: 300px; /* Изображение растянется по ширине овала */
+    height: auto;
+  }
+}
+@media (max-width: 1366px) {
+  .main .chess-title {
+    height: auto;
+  }
+}
 @media (max-width: 900px) {
   .main .chess-title {
     height: 100%;
@@ -308,6 +340,15 @@
   align-items: center;
   position: relative;
 }
+@media (max-width: 1366px) {
+  .main .chess-table {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+}
 .main .chess-table__content {
   background-color: #ffffff;
   display: flex;
@@ -317,6 +358,21 @@
   width: 100%;
   font-size: 36px;
   font-family: "Merriweather", serif;
+}
+@media (max-width: 1366px) {
+  .main .chess-table__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 72px;
+  }
+}
+@media (max-width: 768px) {
+  .main .chess-table__content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .main .chess-table__content .men_chess {
   opacity: 0.8;
@@ -333,7 +389,6 @@
   position: absolute;
   top: 0;
   width: 474px;
-  height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -342,6 +397,11 @@
   flex-direction: column;
   height: 100%;
 }
+@media (max-width: 1366px) {
+  .main .chess-table__content .table {
+    width: 100%;
+  }
+}
 .main .chess-table__content .table .styled-table {
   width: 100%;
   margin: 20px auto;
@@ -349,21 +409,70 @@
   font-family: "Golos Text", sans-serif;
   font-size: 20px;
 }
+@media (max-width: 500px) {
+  .main .chess-table__content .table .styled-table {
+    /* Убираем границы столбцов */
+    /* Скрываем первую ячейку */
+    /* Добавляем заголовок из data-label в ячейках */
+  }
+  .main .chess-table__content .table .styled-table tbody,
+  .main .chess-table__content .table .styled-table tr,
+  .main .chess-table__content .table .styled-table th,
+  .main .chess-table__content .table .styled-table td {
+    display: block;
+    width: 100%;
+  }
+  .main .chess-table__content .table .styled-table td {
+    border-right: none;
+    padding: 10px;
+    position: relative;
+  }
+  .main .chess-table__content .table .styled-table td:first-child {
+    display: none;
+  }
+  .main .chess-table__content .table .styled-table td:last-child:before {
+    content: attr(data-label); /* Динамически добавляем заголовок из data-label */
+    font-weight: 400;
+    display: block;
+    margin-bottom: 5px;
+    color: #818181;
+  }
+}
 .main .chess-table__content .table .styled-table th, .main .chess-table__content .table .styled-table td {
   padding: 12px 15px;
   text-align: left;
 }
 .main .chess-table__content .table .styled-table td {
-  border-right: 1px solid #ddd; /* Границы между столбцами */
-  border-bottom: 1px solid #ddd; /* Границы между строками */
-}
-.main .chess-table__content .table .styled-table th {
-  font-weight: bold;
-  border-bottom: 2px solid #f54932; /* Толстая линия под заголовками */
+  border-right: 2px solid #D0D0D0; /* Границы между столбцами */
+  border-bottom: 2px solid #D0D0D0; /* Границы между строками */
 }
 .main .chess-table__content .table .styled-table tr td:last-child {
   border-right: none; /* Убираем правую границу у последней колонки */
 }
 .main .chess-table__content .table .styled-table tr:last-child td {
   border-bottom: none; /* Убираем нижнюю границу у последней строки */
+}
+@media (max-width: 1366px) {
+  .main .chess-table__content .table__title {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .main .chess-table__content .table__title {
+    font-size: 28px;
+  }
+}
+.main .chess-table__content .table__link {
+  color: #3057A2;
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.main .chess-table__content .table__link:hover {
+  color: #0059ff;
+}
+@media (max-width: 768px) {
+  .main .chess-table__content .table__link {
+    font-size: 18px;
+  }
 }/*# sourceMappingURL=styles.css.map */
