@@ -428,7 +428,7 @@ $text-font-family: "Golos Text", sans-serif;
               display: block;
               width: 100%;
             }
-          
+
             /* Убираем границы столбцов */
             td {
               border-right: none;
@@ -454,6 +454,10 @@ $text-font-family: "Golos Text", sans-serif;
           th, td {
             padding: 12px 15px;
             text-align: left;
+
+            @media (max-width: 500px) {
+              padding: 12px 0;
+            }
           }
 
           td {
