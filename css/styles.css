@@ -507,23 +507,36 @@
   font-family: "Merriweather", serif;
 }
 .main .chess-stages__content p {
-  width: 828px;
+  width: 703px;
   font-size: 54px;
   font-family: "Merriweather", serif;
+}
+@media (max-width: 768px) {
+  .main .chess-stages__content p {
+    width: 100%;
+    font-size: 28px;
+  }
 }
 .main .chess-stages__content p .subtitle {
   color: #3057A2;
   font-size: 20px;
   font-weight: 400;
+  width: 250px;
   font-family: "Golos Text", sans-serif;
-  word-wrap: break-word; /* Перенос длинных слов */
-  white-space: normal; /* Перенос строк, если длинные */
   display: inline-block; /* Обеспечивает перенос и правильное отображение */
   margin-top: 10px; /* Можно добавить небольшой отступ для красоты */
   cursor: pointer;
 }
 .main .chess-stages__content p .subtitle:hover {
   color: #0059ff;
+}
+@media (max-width: 768px) {
+  .main .chess-stages__content p .subtitle {
+    font-size: 18px;
+    display: block;
+    width: auto;
+    margin-bottom: 140px;
+  }
 }
 .main .chess-stages__content .grid-container {
   display: grid;
@@ -537,6 +550,22 @@
   /* Скрываем Блок 6, так как он объединен с Блоком 3 */
   /* Объединяем Блоки 8 и 9 по горизонтали */
   /* Скрываем Блок 9, так как он объединен с Блоком 8 */
+}
+@media (max-width: 1336px) {
+  .main .chess-stages__content .grid-container {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .main .chess-stages__content .grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px; /* Промежуток между блоками */
+    margin-top: 20px;
+    height: 100%;
+    width: 100%;
+  }
 }
 .main .chess-stages__content .grid-container .grid-item {
   display: flex;
@@ -553,6 +582,11 @@
   font-family: "Golos Text", sans-serif;
   word-wrap: break-word; /* Перенос длинных слов */
   position: relative;
+}
+@media (max-width: 768px) {
+  .main .chess-stages__content .grid-container .grid-item {
+    padding: 60px 16px 60px 60px;
+  }
 }
 .main .chess-stages__content .grid-container .grid-item::before {
   mix-blend-mode: color-burn;
@@ -583,6 +617,33 @@
   top: 10px;
   left: 10px;
 }
+@media (max-width: 768px) {
+  .main .chess-stages__content .grid-container .circle {
+    top: 60px;
+  }
+}
+.main .chess-stages__content .grid-container .airplane {
+  width: 330px;
+  height: auto;
+  position: absolute;
+  right: -30px;
+  top: 40%;
+  bottom: 0;
+  transform: translateY(-50%);
+  display: none;
+}
+@media (max-width: 768px) {
+  .main .chess-stages__content .grid-container .airplane {
+    display: block;
+    width: 335px;
+    height: auto;
+    position: absolute;
+    left: 50%; /* Добавляем */
+    right: auto; /* Обнуляем */
+    transform: translate(-50%, -50%); /* Центрирование по X и Y */
+    top: -20%; /* Центрирование по Y */
+  }
+}
 .main .chess-stages__content .grid-container .airplane-image {
   width: 350px;
   height: auto;
@@ -591,6 +652,11 @@
   top: 30%;
   bottom: 0;
   transform: translateY(-50%);
+}
+@media (max-width: 768px) {
+  .main .chess-stages__content .grid-container .airplane-image {
+    display: none;
+  }
 }
 .main .chess-stages__content .grid-container .grid-item-3 {
   grid-row: span 2; /* Занимает 2 строки по вертикали */
@@ -607,7 +673,6 @@
 @media (max-width: 1366px) {
   .main .chess-stages__content {
     display: flex;
-    align-items: center;
     flex-direction: column;
     height: 100%;
     padding: 72px;
@@ -615,7 +680,6 @@
 }
 @media (max-width: 768px) {
   .main .chess-stages__content {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
   }
 }/*# sourceMappingURL=styles.css.map */

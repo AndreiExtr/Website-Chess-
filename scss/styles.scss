@@ -527,23 +527,34 @@ $text-font-family: "Golos Text", sans-serif;
       font-family: $title-font-family;
 
       p{
-        width: 828px;
+        width: 703px;
         font-size: 54px;
         font-family: $title-font-family;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          font-size: 28px;
+        }
 
         .subtitle {
           color: #3057A2;
           font-size: 20px;
           font-weight: 400;
+          width: 250px;
           font-family: $text-font-family;
-          word-wrap: break-word; /* Перенос длинных слов */
-          white-space: normal; /* Перенос строк, если длинные */
           display: inline-block; /* Обеспечивает перенос и правильное отображение */
           margin-top: 10px; /* Можно добавить небольшой отступ для красоты */
           cursor: pointer;
 
           &:hover{
             color: #0059ff; 
+          }
+
+          @media (max-width: 768px) {
+            font-size: 18px;
+            display: block;
+            width: auto;
+            margin-bottom: 140px;
           }
         }
       }
@@ -555,6 +566,20 @@ $text-font-family: "Golos Text", sans-serif;
         margin-top: 20px;
         height: 400px;
         width: 100%;
+
+        @media (max-width: 1336px) {
+          height: 100%;
+          width: 100%;
+        }
+
+        @media (max-width: 768px) {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px; /* Промежуток между блоками */
+          margin-top: 20px;
+          height: 100%;
+          width: 100%;
+        }
 
         .grid-item {
           display: flex;
@@ -571,6 +596,10 @@ $text-font-family: "Golos Text", sans-serif;
           font-family: $text-font-family;
           word-wrap: break-word; /* Перенос длинных слов */
           position: relative;
+
+          @media (max-width: 768px) {
+            padding: 60px 16px 60px 60px;
+          }
         }
 
         /* Второе изображение через псевдоэлемент */
@@ -603,6 +632,32 @@ $text-font-family: "Golos Text", sans-serif;
           position: absolute;
           top: 10px;
           left: 10px;
+
+          @media (max-width: 768px) {
+            top: 60px;
+          }
+        }
+
+        .airplane {
+          width: 330px;
+          height: auto;
+          position: absolute;
+          right: -30px;
+          top: 40%;
+          bottom: 0;
+          transform: translateY(-50%);
+          display: none;
+
+          @media (max-width: 768px) {
+            display: block;
+            width: 335px;
+            height: auto;
+            position: absolute;
+            left: 50%;  /* Добавляем */
+            right: auto;  /* Обнуляем */
+            transform: translate(-50%, -50%); /* Центрирование по X и Y */
+            top: -20%; /* Центрирование по Y */
+          }
         }
 
         .airplane-image {
@@ -613,6 +668,10 @@ $text-font-family: "Golos Text", sans-serif;
           top: 30%;
           bottom: 0;
           transform: translateY(-50%);
+
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
       
 
@@ -639,15 +698,13 @@ $text-font-family: "Golos Text", sans-serif;
 
       @media (max-width: 1366px) {
         display: flex;
-        align-items: center;
         flex-direction: column;
         height: 100%;
         padding: 72px;
       }
 
       @media (max-width: 768px) {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 20px;
       }
     }
   }
