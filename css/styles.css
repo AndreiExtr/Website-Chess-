@@ -559,8 +559,8 @@
 }
 @media (max-width: 768px) {
   .main .chess-stages__content .grid-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 20px; /* Промежуток между блоками */
     margin-top: 20px;
     height: 100%;
