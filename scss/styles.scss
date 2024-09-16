@@ -567,18 +567,82 @@ $text-font-family: "Golos Text", sans-serif;
         height: 400px;
         width: 100%;
 
+        &__grid-item1{
+          display: none;
+        }
+
         @media (max-width: 1336px) {
           height: 100%;
           width: 100%;
         }
 
         @media (max-width: 768px) {
-          display: flex;
-          flex-direction: column;
-          gap: 20px; /* Промежуток между блоками */
-          margin-top: 20px;
-          height: 100%;
-          width: 100%;
+            display: grid;
+            grid-template-columns:  repeat(8, 1fr); /* Один блок на всю ширину */
+            gap: 20px; /* Промежуток между блоками */
+            width: 100%;
+            height: auto;
+
+            /* Скрываем блоки 1 и 2 */
+            .grid-item-1, .grid-item-2 {
+              display: none !important;
+            }
+
+            &__grid-item1{
+              display: flex;
+              gap: 24px;
+              flex-direction: column;
+              background-image: url('../img/background_texture1.png'); /* Замените 'your-image-url.jpg' на путь к вашей картинке */
+              background-size: cover; /* Картинка масштабируется, чтобы заполнить весь блок */
+              background-position: center;
+              width: 335px;
+              position: relative;
+              padding: 60px 20px 16px 20px;
+              text-align: left;
+              font-weight: 400;
+              font-size: 20px;
+
+              .grid-item-a, .grid-item-b{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: row;
+                gap: 16px;
+                text-align: left;
+                font-weight: 400;
+                font-size: 18px;
+                font-family: $text-font-family;
+              }
+
+              .circles {
+                display: flex;
+                width: 36px;
+                height: 36px;
+                padding-left: 13px;
+                padding-right: 13px;
+                justify-content: center;
+                align-items: center;
+                background-color: #ffffff;
+                color: #313131;
+                border-radius: 50%;
+                font-size: 20px;
+                font-weight: 600;
+              }
+            }
+
+            &__grid-item1::before {
+              mix-blend-mode: color-burn;
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-image: url('../img/background_texture.png'); /* Второе фоновое изображение */
+              background-size: cover;
+              background-position: center;
+              opacity: 0.8;
+              z-index: 1;
+            }
         }
 
         .grid-item {
@@ -599,6 +663,8 @@ $text-font-family: "Golos Text", sans-serif;
 
           @media (max-width: 768px) {
             padding: 60px 16px 60px 60px;
+            width: 335px;
+            height: 300px;
           }
         }
 
@@ -653,10 +719,10 @@ $text-font-family: "Golos Text", sans-serif;
             width: 335px;
             height: auto;
             position: absolute;
-            left: 50%;  /* Добавляем */
-            right: auto;  /* Обнуляем */
-            transform: translate(-50%, -50%); /* Центрирование по X и Y */
-            top: -20%; /* Центрирование по Y */
+            left: 60%;
+            right: auto;
+            transform: translate(-50%, -50%);
+            top: -16%;
           }
         }
 
@@ -674,6 +740,9 @@ $text-font-family: "Golos Text", sans-serif;
           }
         }
       
+        .grid-item-1 .grid-item-2 {
+          display: block;
+        }
 
         /* Объединяем Блок 3 и Блок 6 по вертикали */
         .grid-item-3 {
@@ -704,6 +773,7 @@ $text-font-family: "Golos Text", sans-serif;
       }
 
       @media (max-width: 768px) {
+        overflow: hidden;
         padding: 20px;
       }
     }
