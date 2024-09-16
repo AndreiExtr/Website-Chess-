@@ -586,7 +586,7 @@ $text-font-family: "Golos Text", sans-serif;
           justify-content: flex-start;
           flex-direction: row;
           gap: 16px;
-          background-image: url('./img/background_texture1.png'); /* Замените 'your-image-url.jpg' на путь к вашей картинке */
+          background-image: url('../img/background_texture1.png'); /* Замените 'your-image-url.jpg' на путь к вашей картинке */
           background-size: cover; /* Картинка масштабируется, чтобы заполнить весь блок */
           background-position: center; /* Центрируем картинку */
           padding: 16px 16px 16px 60px;
@@ -611,7 +611,7 @@ $text-font-family: "Golos Text", sans-serif;
           left: 0;
           width: 100%;
           height: 100%;
-          background-image: url('./img/background_texture.png'); /* Второе фоновое изображение */
+          background-image: url('../img/background_texture.png'); /* Второе фоновое изображение */
           background-size: cover;
           background-position: center;
           opacity: 0.8;
