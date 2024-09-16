@@ -662,9 +662,10 @@ $text-font-family: "Golos Text", sans-serif;
           position: relative;
 
           @media (max-width: 768px) {
-            padding: 60px 16px 60px 60px;
+            padding: 60px 20px 16px 73px;
             width: 335px;
             height: 300px;
+            font-size: 18px;
           }
         }
 
@@ -701,6 +702,7 @@ $text-font-family: "Golos Text", sans-serif;
 
           @media (max-width: 768px) {
             top: 60px;
+            left: 20px;
           }
         }
 

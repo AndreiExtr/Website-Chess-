@@ -643,9 +643,10 @@
 }
 @media (max-width: 768px) {
   .main .chess-stages__content .grid-container .grid-item {
-    padding: 60px 16px 60px 60px;
+    padding: 60px 20px 16px 73px;
     width: 335px;
     height: 300px;
+    font-size: 18px;
   }
 }
 .main .chess-stages__content .grid-container .grid-item::before {
@@ -680,6 +681,7 @@
 @media (max-width: 768px) {
   .main .chess-stages__content .grid-container .circle {
     top: 60px;
+    left: 20px;
   }
 }
 .main .chess-stages__content .grid-container .airplane {
