@@ -525,6 +525,7 @@ $text-font-family: "Golos Text", sans-serif;
       width: 100%;
       font-size: 36px;
       font-family: $title-font-family;
+      position: relative;
 
       p{
         width: 703px;
@@ -566,7 +567,6 @@ $text-font-family: "Golos Text", sans-serif;
         margin-top: 20px;
         height: 400px;
         width: 100%;
-        position: relative;
 
         &__grid-item1{
           display: none;
@@ -587,6 +587,9 @@ $text-font-family: "Golos Text", sans-serif;
             gap: 20px; /* Промежуток между блоками */
             width: 100%;
             height: auto;
+            overflow-x: scroll; /* Горизонтальный скролл для блоков */
+            scroll-snap-type: x mandatory;
+            
 
             /* Скрываем блоки 1 и 2 */
             .grid-item-1, .grid-item-2 {
@@ -782,7 +785,7 @@ $text-font-family: "Golos Text", sans-serif;
           display: none;
 
           @media (max-width: 768px) {
-            display: block;
+            display: none;
             width: 335px;
             height: auto;
             position: absolute;
@@ -830,6 +833,9 @@ $text-font-family: "Golos Text", sans-serif;
         .grid-item-8 {
           padding: 16px 260px 16px 60px;
           grid-column: span 2; /* Занимает 2 колонки по горизонтали */
+          @media (max-width: 768px) {
+            padding: 60px 20px 16px 73px;
+          }
         }
 
         /* Скрываем Блок 9, так как он объединен с Блоком 8 */
@@ -848,6 +854,18 @@ $text-font-family: "Golos Text", sans-serif;
       @media (max-width: 768px) {
         overflow: hidden;
         padding: 20px;
+
+        .airplane {
+          display: block;
+          width: 335px;
+          height: auto;
+          position: absolute;
+          right: auto;
+          left: 50%;
+          transform: translate(-50%, -160%);
+          top: 70%;
+          z-index: 1;
+        }
       }
     }
   }

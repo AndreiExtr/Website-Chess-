@@ -505,6 +505,7 @@
   width: 100%;
   font-size: 36px;
   font-family: "Merriweather", serif;
+  position: relative;
 }
 .main .chess-stages__content p {
   width: 703px;
@@ -545,7 +546,6 @@
   margin-top: 20px;
   height: 400px;
   width: 100%;
-  position: relative;
   /* Второе изображение через псевдоэлемент */
   /* Объединяем Блок 3 и Блок 6 по вертикали */
   /* Скрываем Блок 6, так как он объединен с Блоком 3 */
@@ -571,6 +571,8 @@
     gap: 20px; /* Промежуток между блоками */
     width: 100%;
     height: auto;
+    overflow-x: scroll; /* Горизонтальный скролл для блоков */
+    scroll-snap-type: x mandatory;
     /* Скрываем блоки 1 и 2 */
   }
   .main .chess-stages__content .grid-container .grid-item-1, .main .chess-stages__content .grid-container .grid-item-2 {
@@ -755,7 +757,7 @@
 }
 @media (max-width: 768px) {
   .main .chess-stages__content .grid-container .airplane {
-    display: block;
+    display: none;
     width: 335px;
     height: auto;
     position: absolute;
@@ -796,6 +798,11 @@
   padding: 16px 260px 16px 60px;
   grid-column: span 2; /* Занимает 2 колонки по горизонтали */
 }
+@media (max-width: 768px) {
+  .main .chess-stages__content .grid-container .grid-item-8 {
+    padding: 60px 20px 16px 73px;
+  }
+}
 .main .chess-stages__content .grid-container .grid-item-9 {
   display: none;
 }
@@ -811,5 +818,16 @@
   .main .chess-stages__content {
     overflow: hidden;
     padding: 20px;
+  }
+  .main .chess-stages__content .airplane {
+    display: block;
+    width: 335px;
+    height: auto;
+    position: absolute;
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, -160%);
+    top: 70%;
+    z-index: 1;
   }
 }/*# sourceMappingURL=styles.css.map */
