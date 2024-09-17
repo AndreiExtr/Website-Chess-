@@ -566,8 +566,13 @@ $text-font-family: "Golos Text", sans-serif;
         margin-top: 20px;
         height: 400px;
         width: 100%;
+        position: relative;
 
         &__grid-item1{
+          display: none;
+        }
+
+        &__grid-item2{
           display: none;
         }
 
@@ -585,6 +590,10 @@ $text-font-family: "Golos Text", sans-serif;
 
             /* Скрываем блоки 1 и 2 */
             .grid-item-1, .grid-item-2 {
+              display: none !important;
+            }
+
+            .grid-item-4, .grid-item-5 {
               display: none !important;
             }
 
@@ -630,6 +639,62 @@ $text-font-family: "Golos Text", sans-serif;
             }
 
             &__grid-item1::before {
+              mix-blend-mode: color-burn;
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-image: url('../img/background_texture.png'); /* Второе фоновое изображение */
+              background-size: cover;
+              background-position: center;
+              opacity: 0.8;
+              z-index: 1;
+            }
+
+            &__grid-item2{
+              display: flex;
+              gap: 24px;
+              flex-direction: column;
+              background-image: url('../img/background_texture1.png'); /* Замените 'your-image-url.jpg' на путь к вашей картинке */
+              background-size: cover; /* Картинка масштабируется, чтобы заполнить весь блок */
+              background-position: center;
+              width: 335px;
+              position: relative;
+              padding: 60px 20px 16px 20px;
+              text-align: left;
+              font-weight: 400;
+              font-size: 20px;
+
+              .grid-item-a, .grid-item-b{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: row;
+                gap: 16px;
+                text-align: left;
+                font-weight: 400;
+                font-size: 18px;
+                font-family: $text-font-family;
+              }
+
+              .circles {
+                display: flex;
+                width: 36px;
+                height: 36px;
+                padding-left: 13px;
+                padding-right: 13px;
+                justify-content: center;
+                align-items: center;
+                background-color: #ffffff;
+                color: #313131;
+                border-radius: 50%;
+                font-size: 20px;
+                font-weight: 600;
+              }
+            }
+
+            &__grid-item2::before {
               mix-blend-mode: color-burn;
               content: "";
               position: absolute;
@@ -721,18 +786,19 @@ $text-font-family: "Golos Text", sans-serif;
             width: 335px;
             height: auto;
             position: absolute;
-            left: 60%;
             right: auto;
-            transform: translate(-50%, -50%);
-            top: -16%;
+            left: 50%;
+            transform: translate(-50%, -160%);
+            top: 50%;
+            z-index: 1;
           }
         }
 
         .airplane-image {
-          width: 350px;
+          width: 300px;
           height: auto;
           position: absolute;
-          right: -70px;
+          right: -35px;
           top: 30%;
           bottom: 0;
           transform: translateY(-50%);
@@ -743,6 +809,10 @@ $text-font-family: "Golos Text", sans-serif;
         }
       
         .grid-item-1 .grid-item-2 {
+          display: block;
+        }
+
+        .grid-item-4 .grid-item-5 {
           display: block;
         }
 
@@ -758,7 +828,8 @@ $text-font-family: "Golos Text", sans-serif;
 
         /* Объединяем Блоки 8 и 9 по горизонтали */
         .grid-item-8 {
-            grid-column: span 2; /* Занимает 2 колонки по горизонтали */
+          padding: 16px 260px 16px 60px;
+          grid-column: span 2; /* Занимает 2 колонки по горизонтали */
         }
 
         /* Скрываем Блок 9, так как он объединен с Блоком 8 */
