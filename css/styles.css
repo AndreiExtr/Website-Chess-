@@ -556,148 +556,6 @@
   margin-top: 20px;
   height: 400px;
   width: 100%;
-  /* Второе изображение через псевдоэлемент */
-  /* Объединяем Блок 3 и Блок 6 по вертикали */
-  /* Скрываем Блок 6, так как он объединен с Блоком 3 */
-  /* Объединяем Блоки 8 и 9 по горизонтали */
-  /* Скрываем Блок 9, так как он объединен с Блоком 8 */
-}
-.main .chess-stages__content .grid-container .airplane {
-  display: none;
-}
-.main .chess-stages__content .grid-container__grid-item1 {
-  display: none;
-}
-.main .chess-stages__content .grid-container__grid-item2 {
-  display: none;
-}
-@media (max-width: 1336px) {
-  .main .chess-stages__content .grid-container {
-    height: 100%;
-    width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .main .chess-stages__content .grid-container {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr); /* Один блок на всю ширину */
-    gap: 20px; /* Промежуток между блоками */
-    width: 100%;
-    height: auto;
-    overflow-x: scroll; /* Горизонтальный скролл для блоков */
-    scroll-snap-type: x mandatory;
-    /* Скрываем блоки 1 и 2 */
-  }
-  .main .chess-stages__content .grid-container .grid-item-1, .main .chess-stages__content .grid-container .grid-item-2 {
-    display: none !important;
-  }
-  .main .chess-stages__content .grid-container .grid-item-4, .main .chess-stages__content .grid-container .grid-item-5 {
-    display: none !important;
-  }
-  .main .chess-stages__content .grid-container__grid-item1 {
-    display: flex;
-    gap: 24px;
-    flex-direction: column;
-    background-image: url("../img/background_texture1.png"); /* Замените 'your-image-url.jpg' на путь к вашей картинке */
-    background-size: cover; /* Картинка масштабируется, чтобы заполнить весь блок */
-    background-position: center;
-    width: 335px;
-    position: relative;
-    padding: 60px 20px 16px 20px;
-    text-align: left;
-    font-weight: 400;
-    font-size: 20px;
-  }
-  .main .chess-stages__content .grid-container__grid-item1 .grid-item-a, .main .chess-stages__content .grid-container__grid-item1 .grid-item-b {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 16px;
-    text-align: left;
-    font-weight: 400;
-    font-size: 18px;
-    font-family: "Golos Text", sans-serif;
-  }
-  .main .chess-stages__content .grid-container__grid-item1 .circles {
-    display: flex;
-    width: 36px;
-    height: 36px;
-    padding-left: 13px;
-    padding-right: 13px;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    color: #313131;
-    border-radius: 50%;
-    font-size: 20px;
-    font-weight: 600;
-  }
-  .main .chess-stages__content .grid-container__grid-item1::before {
-    mix-blend-mode: color-burn;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../img/background_texture.png"); /* Второе фоновое изображение */
-    background-size: cover;
-    background-position: center;
-    opacity: 0.8;
-    z-index: 1;
-  }
-  .main .chess-stages__content .grid-container__grid-item2 {
-    display: flex;
-    gap: 24px;
-    flex-direction: column;
-    background-image: url("../img/background_texture1.png"); /* Замените 'your-image-url.jpg' на путь к вашей картинке */
-    background-size: cover; /* Картинка масштабируется, чтобы заполнить весь блок */
-    background-position: center;
-    width: 335px;
-    position: relative;
-    padding: 60px 20px 16px 20px;
-    text-align: left;
-    font-weight: 400;
-    font-size: 20px;
-  }
-  .main .chess-stages__content .grid-container__grid-item2 .grid-item-a, .main .chess-stages__content .grid-container__grid-item2 .grid-item-b {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 16px;
-    text-align: left;
-    font-weight: 400;
-    font-size: 18px;
-    font-family: "Golos Text", sans-serif;
-  }
-  .main .chess-stages__content .grid-container__grid-item2 .circles {
-    display: flex;
-    width: 36px;
-    height: 36px;
-    padding-left: 13px;
-    padding-right: 13px;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    color: #313131;
-    border-radius: 50%;
-    font-size: 20px;
-    font-weight: 600;
-  }
-  .main .chess-stages__content .grid-container__grid-item2::before {
-    mix-blend-mode: color-burn;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../img/background_texture.png"); /* Второе фоновое изображение */
-    background-size: cover;
-    background-position: center;
-    opacity: 0.8;
-    z-index: 1;
-  }
 }
 .main .chess-stages__content .grid-container .grid-item {
   display: flex;
@@ -737,6 +595,143 @@
   opacity: 0.8;
   z-index: 1;
 }
+.main .chess-stages__content .grid-container .airplane {
+  display: none;
+}
+.main .chess-stages__content .grid-container__grid-item-1 {
+  display: none;
+}
+.main .chess-stages__content .grid-container__grid-item-4 {
+  display: none;
+}
+@media (max-width: 1336px) {
+  .main .chess-stages__content .grid-container {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .main .chess-stages__content .grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Один блок на всю ширину */
+    gap: 20px; /* Промежуток между блоками */
+    width: 100%;
+    height: auto;
+    overflow-x: scroll; /* Горизонтальный скролл для блоков */
+    scroll-snap-type: x mandatory;
+    /* Скрываем блоки 1 и 2 */
+  }
+  .main .chess-stages__content .grid-container .grid-item-1,
+  .main .chess-stages__content .grid-container .grid-item-2,
+  .main .chess-stages__content .grid-container .grid-item-4,
+  .main .chess-stages__content .grid-container .grid-item-5 {
+    display: none !important;
+  }
+  .main .chess-stages__content .grid-container__grid-item-1 {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    background-image: url("../img/background_texture1.png"); /* Замените 'your-image-url.jpg' на путь к вашей картинке */
+    background-size: cover; /* Картинка масштабируется, чтобы заполнить весь блок */
+    background-position: center;
+    width: 335px;
+    position: relative;
+    padding: 60px 20px 16px 20px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .main .chess-stages__content .grid-container__grid-item-1 .grid-item-a, .main .chess-stages__content .grid-container__grid-item-1 .grid-item-b {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 16px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Golos Text", sans-serif;
+  }
+  .main .chess-stages__content .grid-container__grid-item-1 .circles {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    padding-left: 13px;
+    padding-right: 13px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #313131;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .main .chess-stages__content .grid-container__grid-item-1::before {
+    mix-blend-mode: color-burn;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/background_texture.png"); /* Второе фоновое изображение */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: 1;
+  }
+  .main .chess-stages__content .grid-container__grid-item-4 {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    background-image: url("../img/background_texture1.png"); /* Замените 'your-image-url.jpg' на путь к вашей картинке */
+    background-size: cover; /* Картинка масштабируется, чтобы заполнить весь блок */
+    background-position: center;
+    width: 335px;
+    position: relative;
+    padding: 60px 20px 16px 20px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .main .chess-stages__content .grid-container__grid-item-4 .grid-item-a, .main .chess-stages__content .grid-container__grid-item-4 .grid-item-b {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 16px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Golos Text", sans-serif;
+  }
+  .main .chess-stages__content .grid-container__grid-item-4 .circles {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    padding-left: 13px;
+    padding-right: 13px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #313131;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .main .chess-stages__content .grid-container__grid-item-4::before {
+    mix-blend-mode: color-burn;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/background_texture.png"); /* Второе фоновое изображение */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: 1;
+  }
+}
 .main .chess-stages__content .grid-container .circle {
   display: flex;
   justify-content: center;
@@ -775,18 +770,18 @@
 .main .chess-stages__content .grid-container .grid-item-1 .grid-item-2 {
   display: block;
 }
+.main .chess-stages__content .grid-container .grid-item-3 {
+  grid-row: span 2;
+}
 .main .chess-stages__content .grid-container .grid-item-4 .grid-item-5 {
   display: block;
-}
-.main .chess-stages__content .grid-container .grid-item-3 {
-  grid-row: span 2; /* Занимает 2 строки по вертикали */
 }
 .main .chess-stages__content .grid-container .grid-item-6 {
   display: none;
 }
 .main .chess-stages__content .grid-container .grid-item-8 {
   padding: 16px 260px 16px 60px;
-  grid-column: span 2; /* Занимает 2 колонки по горизонтали */
+  grid-column: span 2;
 }
 @media (max-width: 768px) {
   .main .chess-stages__content .grid-container .grid-item-8 {
@@ -794,6 +789,9 @@
   }
 }
 .main .chess-stages__content .grid-container .grid-item-9 {
+  display: none;
+}
+.main .chess-stages__content .slider-controls {
   display: none;
 }
 @media (max-width: 1366px) {
@@ -808,6 +806,8 @@
   .main .chess-stages__content {
     overflow: hidden;
     padding: 20px;
+    display: flex;
+    align-items: center;
   }
   .main .chess-stages__content .airplane {
     display: block;
@@ -817,7 +817,43 @@
     right: auto;
     left: 50%;
     transform: translate(-50%, -160%);
-    top: 70%;
+    top: 64%;
     z-index: 1;
+  }
+  .main .chess-stages__content .slider-controls {
+    display: flex;
+    width: 200px;
+    padding: 8px 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main .chess-stages__content .slider-controls .slider-arrow-left {
+    fill: #acacac;
+    cursor: pointer;
+  }
+  .main .chess-stages__content .slider-controls .slider-arrow-left polyline {
+    stroke: rgb(255, 255, 255);
+  }
+  .main .chess-stages__content .slider-controls .slider-indicators {
+    display: flex;
+    gap: 10px;
+  }
+  .main .chess-stages__content .slider-controls .slider-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #acacac;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .main .chess-stages__content .slider-controls .slider-indicators .indicator.active {
+    background-color: #1d1d1d; /* Цвет активного индикатора */
+  }
+  .main .chess-stages__content .slider-controls .slider-arrow-right {
+    fill: #1d1d1d;
+    cursor: pointer;
+  }
+  .main .chess-stages__content .slider-controls .slider-arrow-right polyline {
+    stroke: rgb(255, 255, 255);
   }
 }/*# sourceMappingURL=styles.css.map */
