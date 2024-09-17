@@ -527,6 +527,17 @@ $text-font-family: "Golos Text", sans-serif;
       font-family: $title-font-family;
       position: relative;
 
+      .airplane {
+        width: 330px;
+        height: auto;
+        position: absolute;
+        right: -30px;
+        top: 40%;
+        bottom: 0;
+        transform: translateY(-50%);
+        display: none;
+      }
+
       p{
         width: 703px;
         font-size: 54px;
@@ -567,6 +578,10 @@ $text-font-family: "Golos Text", sans-serif;
         margin-top: 20px;
         height: 400px;
         width: 100%;
+
+        .airplane {
+          display: none;
+        }
 
         &__grid-item1{
           display: none;
@@ -771,29 +786,6 @@ $text-font-family: "Golos Text", sans-serif;
           @media (max-width: 768px) {
             top: 60px;
             left: 20px;
-          }
-        }
-
-        .airplane {
-          width: 330px;
-          height: auto;
-          position: absolute;
-          right: -30px;
-          top: 40%;
-          bottom: 0;
-          transform: translateY(-50%);
-          display: none;
-
-          @media (max-width: 768px) {
-            display: none;
-            width: 335px;
-            height: auto;
-            position: absolute;
-            right: auto;
-            left: 50%;
-            transform: translate(-50%, -160%);
-            top: 50%;
-            z-index: 1;
           }
         }
 

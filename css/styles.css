@@ -507,6 +507,16 @@
   font-family: "Merriweather", serif;
   position: relative;
 }
+.main .chess-stages__content .airplane {
+  width: 330px;
+  height: auto;
+  position: absolute;
+  right: -30px;
+  top: 40%;
+  bottom: 0;
+  transform: translateY(-50%);
+  display: none;
+}
 .main .chess-stages__content p {
   width: 703px;
   font-size: 54px;
@@ -551,6 +561,9 @@
   /* Скрываем Блок 6, так как он объединен с Блоком 3 */
   /* Объединяем Блоки 8 и 9 по горизонтали */
   /* Скрываем Блок 9, так как он объединен с Блоком 8 */
+}
+.main .chess-stages__content .grid-container .airplane {
+  display: none;
 }
 .main .chess-stages__content .grid-container__grid-item1 {
   display: none;
@@ -743,29 +756,6 @@
   .main .chess-stages__content .grid-container .circle {
     top: 60px;
     left: 20px;
-  }
-}
-.main .chess-stages__content .grid-container .airplane {
-  width: 330px;
-  height: auto;
-  position: absolute;
-  right: -30px;
-  top: 40%;
-  bottom: 0;
-  transform: translateY(-50%);
-  display: none;
-}
-@media (max-width: 768px) {
-  .main .chess-stages__content .grid-container .airplane {
-    display: none;
-    width: 335px;
-    height: auto;
-    position: absolute;
-    right: auto;
-    left: 50%;
-    transform: translate(-50%, -160%);
-    top: 50%;
-    z-index: 1;
   }
 }
 .main .chess-stages__content .grid-container .airplane-image {
