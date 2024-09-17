@@ -10,11 +10,14 @@ const totalItems = gridItems.length; // Количество элементов 
 // Функция для перемещения слайдера
 function scrollSliderV(direction) {
   currentIndexV = (currentIndexV + direction + totalItems) % totalItems; // Новая позиция
-  const offset = -currentIndexV * gridItems[0].offsetWidth; // Смещение по ширине одного элемента
+  const offset = -currentIndexV * (gridItems[0].offsetWidth + 40); // Смещение с учетом отступа
   gridContainer.style.transform = `translateX(${offset}px)`; // Применяем трансформацию
 
   // Обновляем индикаторы
   setActiveIndicator(currentIndexV);
+
+  // Обновляем кнопки
+  updateArrows();
 }
 
 // Функция для обновления индикаторов
@@ -24,8 +27,19 @@ function setActiveIndicator(index) {
   });
 }
 
+// Функция для обновления состояния стрелок
+function updateArrows() {
+  leftArrow.classList.toggle('inactive', currentIndexV === 0);
+  leftArrow.classList.toggle('active', currentIndexV !== 0);
+  rightArrow.classList.toggle('inactive', currentIndexV === totalItems - 1);
+  rightArrow.classList.toggle('active', currentIndexV !== totalItems - 1);
+}
+
 // Делаем первый индикатор активным по умолчанию
 setActiveIndicator(0);
+
+// Обновляем состояние стрелок по умолчанию
+updateArrows();
 
 // Привязываем обработчики событий к стрелкам
 leftArrow.addEventListener('click', () => scrollSliderV(-1)); // Перемещаем влево

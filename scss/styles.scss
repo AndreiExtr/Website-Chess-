@@ -381,8 +381,7 @@ $text-font-family: "Golos Text", sans-serif;
       }
 
       @media (max-width: 768px) {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 20px;
       }
 
       .men_chess {
@@ -597,7 +596,7 @@ $text-font-family: "Golos Text", sans-serif;
 
           @media (max-width: 768px) {
             padding: 60px 20px 16px 73px;
-            width: 335px;
+            width: 330px;
             height: 300px;
             font-size: 18px;
           }
@@ -638,11 +637,10 @@ $text-font-family: "Golos Text", sans-serif;
         @media (max-width: 768px) {
             display: grid;
             grid-template-columns:  repeat(8, 1fr); /* Один блок на всю ширину */
-            gap: 20px; /* Промежуток между блоками */
+            gap: 0 40px; /* Промежуток между блоками */
             width: 100%;
             height: auto;
-            overflow-x: scroll; /* Горизонтальный скролл для блоков */
-            scroll-snap-type: x mandatory;
+            transition: transform 0.5s ease;
             
 
             /* Скрываем блоки 1 и 2 */
@@ -660,7 +658,7 @@ $text-font-family: "Golos Text", sans-serif;
               background-image: url('../img/background_texture1.png'); /* Замените 'your-image-url.jpg' на путь к вашей картинке */
               background-size: cover; /* Картинка масштабируется, чтобы заполнить весь блок */
               background-position: center;
-              width: 335px;
+              width: 330px;
               position: relative;
               padding: 60px 20px 16px 20px;
               text-align: left;
@@ -716,7 +714,7 @@ $text-font-family: "Golos Text", sans-serif;
               background-image: url('../img/background_texture1.png'); /* Замените 'your-image-url.jpg' на путь к вашей картинке */
               background-size: cover; /* Картинка масштабируется, чтобы заполнить весь блок */
               background-position: center;
-              width: 335px;
+              width: 330px;
               position: relative;
               padding: 60px 20px 16px 20px;
               text-align: left;
@@ -765,6 +763,7 @@ $text-font-family: "Golos Text", sans-serif;
               z-index: 1;
             }
         }
+
 
         .circle {
           display: flex;
@@ -855,7 +854,7 @@ $text-font-family: "Golos Text", sans-serif;
           right: auto;
           left: 50%;
           transform: translate(-50%, -160%);
-          top: 64%;
+          top: 70%;
           z-index: 1;
         }
 
@@ -866,13 +865,36 @@ $text-font-family: "Golos Text", sans-serif;
           align-items: center;
           justify-content: space-between;
 
-          .slider-arrow-left {
-            fill: #acacac;
+          .slider-arrow-left,
+          .slider-arrow-right {
+            fill: #acacac; /* Неактивный цвет */
             cursor: pointer;
+            transition: fill 0.3s ease;
 
             polyline {
               stroke: rgb(255, 255, 255);
             }
+          }
+
+          .slider-arrow-left,
+          .slider-arrow-right {
+            cursor: pointer;
+          }
+
+          .slider-arrow-left {
+            fill: #acacac; /* Неактивный цвет */
+          }
+
+          .slider-arrow-left.active {
+            fill: #1d1d1d; /* Активный цвет */
+          }
+
+          .slider-arrow-right {
+            fill: #1d1d1d; /* Активный цвет */
+          }
+
+          .slider-arrow-right.inactive {
+            fill: #acacac; /* Неактивный цвет */
           }
 
           .slider-indicators {
@@ -890,17 +912,10 @@ $text-font-family: "Golos Text", sans-serif;
 
             .indicator.active {
               background-color: #1d1d1d; /* Цвет активного индикатора */
+              transform: scale(1.3); /* Увеличение активного блока */
             }
           }
 
-          .slider-arrow-right {
-            fill: #1d1d1d;
-            cursor: pointer;
-
-            polyline {
-              stroke: rgb(255, 255, 255);
-            }
-          }
         }
       }
     }
