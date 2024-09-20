@@ -873,6 +873,59 @@ body {
     transform: scale(1.3); /* Увеличение активного блока */
   }
 }
+.main .chess-users {
+  height: 700px;
+  padding-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media (max-width: 1366px) {
+  .main .chess-users {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+.main .chess-users__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 100%;
+  font-size: 36px;
+  font-family: "Merriweather", serif;
+}
+.main .chess-users__content p {
+  width: 703px;
+  font-size: 54px;
+  font-family: "Merriweather", serif;
+}
+@media (max-width: 768px) {
+  .main .chess-users__content p {
+    width: 100%;
+    font-size: 28px;
+  }
+}
+@media (max-width: 1366px) {
+  .main .chess-users__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 72px;
+  }
+}
+@media (max-width: 768px) {
+  .main .chess-users__content {
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+}
 
 .footer {
   width: 100%;

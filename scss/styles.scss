@@ -925,6 +925,58 @@ body {
       }
     }
   }
+
+  .chess-users{
+    height: 700px;
+    padding-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media (max-width: 1366px) {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    &__content{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+      max-width: 1200px;
+      width: 100%;
+      font-size: 36px;
+      font-family: $title-font-family;
+
+      p{
+        width: 703px;
+        font-size: 54px;
+        font-family: $title-font-family;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          font-size: 28px;
+        }
+      }
+
+      @media (max-width: 1366px) {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 72px;
+      }
+
+      @media (max-width: 768px) {
+        overflow: hidden;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
 }
 
 .footer {
