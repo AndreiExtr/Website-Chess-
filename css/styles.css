@@ -1,6 +1,11 @@
 @charset "UTF-8";
 @import 'reset.css';
 @import 'https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap';
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   width: 100%;
   height: 60px;
@@ -36,7 +41,7 @@
 }
 
 .main {
-  height: 100vh;
+  height: 100%;
   background-color: rgba(255, 114, 114, 0);
 }
 .main .chess-main {
@@ -867,4 +872,32 @@
     background-color: #1d1d1d; /* Цвет активного индикатора */
     transform: scale(1.3); /* Увеличение активного блока */
   }
+}
+
+.footer {
+  width: 100%;
+  height: 150px;
+  background-color: #E9DED4;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1366px) {
+  .footer {
+    padding: 72px;
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px;
+    height: 100%;
+  }
+}
+.footer__text {
+  max-width: 1200px;
+  font-family: "Golos Text", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #7A7672;
 }/*# sourceMappingURL=styles.css.map */
