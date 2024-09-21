@@ -899,33 +899,85 @@ body {
   width: 100%;
   font-size: 36px;
   font-family: "Merriweather", serif;
+  overflow: hidden;
 }
-.main .chess-users__content p {
-  width: 703px;
+.main .chess-users__content .title {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.main .chess-users__content .title p {
+  width: 100%;
   font-size: 54px;
   font-family: "Merriweather", serif;
 }
 @media (max-width: 768px) {
-  .main .chess-users__content p {
+  .main .chess-users__content .title p {
     width: 100%;
     font-size: 28px;
   }
 }
+.main .chess-users__content .title .slider-controls {
+  display: flex;
+  width: 200px;
+  padding: 8px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .chess-users__content .title .slider-controls .slider-texts {
+  margin: 0 20px;
+  font-size: 16px;
+  font-family: "Golos Text", sans-serif;
+}
+.main .chess-users__content .title .slider-controls .slider-left,
+.main .chess-users__content .title .slider-controls .slider-right {
+  fill: #acacac; /* Неактивный цвет */
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+.main .chess-users__content .title .slider-controls .slider-left polyline,
+.main .chess-users__content .title .slider-controls .slider-right polyline {
+  stroke: rgb(255, 255, 255);
+}
+.main .chess-users__content .title .slider-controls .slider-left,
+.main .chess-users__content .title .slider-controls .slider-right {
+  cursor: pointer;
+}
+.main .chess-users__content .title .slider-controls .slider-left {
+  fill: #acacac; /* Неактивный цвет */
+}
+.main .chess-users__content .title .slider-controls .slider-left.active {
+  fill: #1d1d1d; /* Активный цвет */
+}
+.main .chess-users__content .title .slider-controls .slider-left.active:hover {
+  fill: #FBCE51;
+}
+.main .chess-users__content .title .slider-controls .slider-right {
+  fill: #1d1d1d; /* Активный цвет */
+}
+.main .chess-users__content .title .slider-controls .slider-right:hover {
+  fill: #FBCE51;
+}
+.main .chess-users__content .title .slider-controls .slider-right.inactive {
+  fill: #acacac; /* Неактивный цвет */
+}
 .main .chess-users__content .slider-users {
   width: 100%;
   display: flex;
+  gap: 20px;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 64px;
-  overflow: hidden;
+  transition: transform 0.5s ease;
 }
-.main .chess-users__content .slider-users__item {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
+@media (max-width: 1366px) {
+  .main .chess-users__content .slider-users {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
 }
-.main .chess-users__content .slider-users__item .user {
+.main .chess-users__content .slider-users .user {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -933,8 +985,9 @@ body {
   width: 394px;
   height: 462px;
   text-align: center;
+  padding: 0 32px;
 }
-.main .chess-users__content .slider-users__item .user__circle {
+.main .chess-users__content .slider-users .user__circle {
   width: 320px;
   height: 320px;
   background-color: #424241;
@@ -944,26 +997,26 @@ body {
   margin-bottom: 30px;
   position: relative;
 }
-.main .chess-users__content .slider-users__item .user__circle .avatar {
+.main .chess-users__content .slider-users .user__circle .avatar {
   position: absolute;
   top: 19px;
   left: 4%;
 }
-.main .chess-users__content .slider-users__item .user__title {
+.main .chess-users__content .slider-users .user__title {
   width: 100%;
   font-size: 24px;
   font-weight: 600;
   font-family: "Golos Text", sans-serif;
   margin-bottom: 6px;
 }
-.main .chess-users__content .slider-users__item .user__subtitle {
+.main .chess-users__content .slider-users .user__subtitle {
   width: 100%;
   font-size: 20px;
   font-weight: 400;
   font-family: "Golos Text", sans-serif;
   margin-bottom: 20px;
 }
-.main .chess-users__content .slider-users__item .user__btn {
+.main .chess-users__content .slider-users .user__btn {
   width: 113px;
   height: 35px;
   font-size: 16px;
@@ -974,7 +1027,7 @@ body {
   font-family: "Golos Text", sans-serif;
   cursor: pointer;
 }
-.main .chess-users__content .slider-users__item .user__btn:hover {
+.main .chess-users__content .slider-users .user__btn:hover {
   background: #3057A2;
   color: #ffffff;
 }
