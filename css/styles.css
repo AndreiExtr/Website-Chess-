@@ -487,6 +487,7 @@ body {
 .main .chess-stages {
   height: 600px;
   padding-top: 32px;
+  margin-bottom: 64px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -915,9 +916,16 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 32px;
+  margin-top: 64px;
+  overflow: hidden;
 }
-.main .chess-users__content .slider-users .user {
+.main .chess-users__content .slider-users__item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.main .chess-users__content .slider-users__item .user {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -926,23 +934,49 @@ body {
   height: 462px;
   text-align: center;
 }
-.main .chess-users__content .slider-users .user__circle {
+.main .chess-users__content .slider-users__item .user__circle {
   width: 320px;
   height: 320px;
   background-color: #424241;
+  background-image: url("../img/background_texture1.png");
   border-radius: 400px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  position: relative;
 }
-.main .chess-users__content .slider-users .user__title {
+.main .chess-users__content .slider-users__item .user__circle .avatar {
+  position: absolute;
+  top: 19px;
+  left: 4%;
+}
+.main .chess-users__content .slider-users__item .user__title {
   width: 100%;
   font-size: 24px;
   font-weight: 600;
   font-family: "Golos Text", sans-serif;
+  margin-bottom: 6px;
 }
-.main .chess-users__content .slider-users .user__subtitle {
+.main .chess-users__content .slider-users__item .user__subtitle {
   width: 100%;
   font-size: 20px;
   font-weight: 400;
   font-family: "Golos Text", sans-serif;
+  margin-bottom: 20px;
+}
+.main .chess-users__content .slider-users__item .user__btn {
+  width: 113px;
+  height: 35px;
+  font-size: 16px;
+  color: #3057A2;
+  border: 1px solid #3057A2;
+  border-radius: 30px;
+  font-weight: 400;
+  font-family: "Golos Text", sans-serif;
+  cursor: pointer;
+}
+.main .chess-users__content .slider-users__item .user__btn:hover {
+  background: #3057A2;
+  color: #ffffff;
 }
 @media (max-width: 1366px) {
   .main .chess-users__content {
