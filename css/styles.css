@@ -499,6 +499,7 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100%;
+    margin-bottom: 24px;
   }
 }
 .main .chess-stages__content {
@@ -917,48 +918,53 @@ body {
     font-size: 28px;
   }
 }
-.main .chess-users__content .title .slider-controls {
+.main .chess-users__content .title .slider-controls-top {
   display: flex;
   width: 200px;
   padding: 8px 0;
   align-items: center;
   justify-content: space-between;
 }
-.main .chess-users__content .title .slider-controls .slider-texts {
+@media (max-width: 768px) {
+  .main .chess-users__content .title .slider-controls-top {
+    display: none;
+  }
+}
+.main .chess-users__content .title .slider-controls-top .slider-texts {
   margin: 0 20px;
   font-size: 16px;
   font-family: "Golos Text", sans-serif;
 }
-.main .chess-users__content .title .slider-controls .slider-left,
-.main .chess-users__content .title .slider-controls .slider-right {
+.main .chess-users__content .title .slider-controls-top .slider-left,
+.main .chess-users__content .title .slider-controls-top .slider-right {
   fill: #acacac; /* Неактивный цвет */
   cursor: pointer;
   transition: fill 0.3s ease;
 }
-.main .chess-users__content .title .slider-controls .slider-left polyline,
-.main .chess-users__content .title .slider-controls .slider-right polyline {
+.main .chess-users__content .title .slider-controls-top .slider-left polyline,
+.main .chess-users__content .title .slider-controls-top .slider-right polyline {
   stroke: rgb(255, 255, 255);
 }
-.main .chess-users__content .title .slider-controls .slider-left,
-.main .chess-users__content .title .slider-controls .slider-right {
+.main .chess-users__content .title .slider-controls-top .slider-left,
+.main .chess-users__content .title .slider-controls-top .slider-right {
   cursor: pointer;
 }
-.main .chess-users__content .title .slider-controls .slider-left {
+.main .chess-users__content .title .slider-controls-top .slider-left {
   fill: #acacac; /* Неактивный цвет */
 }
-.main .chess-users__content .title .slider-controls .slider-left.active {
+.main .chess-users__content .title .slider-controls-top .slider-left.active {
   fill: #1d1d1d; /* Активный цвет */
 }
-.main .chess-users__content .title .slider-controls .slider-left.active:hover {
+.main .chess-users__content .title .slider-controls-top .slider-left.active:hover {
   fill: #FBCE51;
 }
-.main .chess-users__content .title .slider-controls .slider-right {
+.main .chess-users__content .title .slider-controls-top .slider-right {
   fill: #1d1d1d; /* Активный цвет */
 }
-.main .chess-users__content .title .slider-controls .slider-right:hover {
+.main .chess-users__content .title .slider-controls-top .slider-right:hover {
   fill: #FBCE51;
 }
-.main .chess-users__content .title .slider-controls .slider-right.inactive {
+.main .chess-users__content .title .slider-controls-top .slider-right.inactive {
   fill: #acacac; /* Неактивный цвет */
 }
 .main .chess-users__content .slider-users {
@@ -975,6 +981,13 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    gap: 0;
+  }
+}
+@media (max-width: 768px) {
+  .main .chess-users__content .slider-users {
+    margin-top: 32px;
+    gap: 40px;
   }
 }
 .main .chess-users__content .slider-users .user {
@@ -985,7 +998,7 @@ body {
   width: 394px;
   height: 462px;
   text-align: center;
-  padding: 0 32px;
+  padding: 0 30px;
 }
 .main .chess-users__content .slider-users .user__circle {
   width: 320px;
@@ -996,6 +1009,12 @@ body {
   overflow: hidden;
   margin-bottom: 30px;
   position: relative;
+}
+@media (max-width: 768px) {
+  .main .chess-users__content .slider-users .user__circle {
+    width: 244px;
+    height: 244px;
+  }
 }
 .main .chess-users__content .slider-users .user__circle .avatar {
   position: absolute;
@@ -1030,6 +1049,61 @@ body {
 .main .chess-users__content .slider-users .user__btn:hover {
   background: #3057A2;
   color: #ffffff;
+}
+@media (max-width: 768px) {
+  .main .chess-users__content .slider-users .user {
+    width: 335px;
+    padding: 0 46px;
+  }
+}
+.main .chess-users__content .slider-controls-bottom {
+  display: flex;
+  width: 200px;
+  padding: 24px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .chess-users__content .slider-controls-bottom .slider-texts {
+  margin: 0 20px;
+  font-size: 16px;
+  font-family: "Golos Text", sans-serif;
+}
+.main .chess-users__content .slider-controls-bottom .slider-left,
+.main .chess-users__content .slider-controls-bottom .slider-right {
+  fill: #acacac; /* Неактивный цвет */
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+.main .chess-users__content .slider-controls-bottom .slider-left polyline,
+.main .chess-users__content .slider-controls-bottom .slider-right polyline {
+  stroke: rgb(255, 255, 255);
+}
+.main .chess-users__content .slider-controls-bottom .slider-left,
+.main .chess-users__content .slider-controls-bottom .slider-right {
+  cursor: pointer;
+}
+.main .chess-users__content .slider-controls-bottom .slider-left {
+  fill: #acacac; /* Неактивный цвет */
+}
+.main .chess-users__content .slider-controls-bottom .slider-left.active {
+  fill: #1d1d1d; /* Активный цвет */
+}
+.main .chess-users__content .slider-controls-bottom .slider-left.active:hover {
+  fill: #FBCE51;
+}
+.main .chess-users__content .slider-controls-bottom .slider-right {
+  fill: #1d1d1d; /* Активный цвет */
+}
+.main .chess-users__content .slider-controls-bottom .slider-right:hover {
+  fill: #FBCE51;
+}
+.main .chess-users__content .slider-controls-bottom .slider-right.inactive {
+  fill: #acacac; /* Неактивный цвет */
+}
+@media (min-width: 768px) {
+  .main .chess-users__content .slider-controls-bottom {
+    display: none;
+  }
 }
 @media (max-width: 1366px) {
   .main .chess-users__content {

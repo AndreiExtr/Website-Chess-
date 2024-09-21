@@ -519,6 +519,7 @@ body {
       align-items: center;
       flex-direction: column;
       height: 100%;
+      margin-bottom: 24px;
     }
 
     &__content{
@@ -969,12 +970,16 @@ body {
           }
         }
 
-        .slider-controls {
+        .slider-controls-top {
           display: flex;
           width: 200px;
           padding: 8px 0;
           align-items: center;
           justify-content: space-between;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
 
           .slider-texts {
             margin: 0 20px;
@@ -1037,6 +1042,12 @@ body {
           display: flex;
           flex-direction: row;
           width: 100%;
+          gap: 0;
+        }
+
+        @media (max-width: 768px) {
+          margin-top: 32px;
+          gap: 40px;
         }
 
         .user{
@@ -1047,7 +1058,7 @@ body {
           width: 394px;
           height: 462px;
           text-align: center;
-          padding: 0 32px;
+          padding: 0 30px;
 
           &__circle{
             width: 320px;
@@ -1058,6 +1069,11 @@ body {
             overflow: hidden;
             margin-bottom: 30px;
             position: relative;
+
+            @media (max-width: 768px) {
+              width: 244px;
+              height: 244px;
+            }
 
             .avatar{
               position: absolute;
@@ -1098,6 +1114,69 @@ body {
               color: #ffffff;
             }
           }
+
+          @media (max-width: 768px) {
+            width: 335px;
+            padding: 0 46px;
+          }
+        }
+      }
+
+      .slider-controls-bottom {
+        display: flex;
+        width: 200px;
+        padding: 24px 0;
+        align-items: center;
+        justify-content: space-between;
+
+        .slider-texts {
+          margin: 0 20px;
+          font-size: 16px;
+          font-family: $text-font-family;
+        }
+
+        .slider-left,
+        .slider-right {
+          fill: #acacac; /* Неактивный цвет */
+          cursor: pointer;
+          transition: fill 0.3s ease;
+
+          polyline {
+            stroke: rgb(255, 255, 255);
+          }
+        }
+
+        .slider-left,
+        .slider-right {
+          cursor: pointer;
+        }
+
+        .slider-left {
+          fill: #acacac; /* Неактивный цвет */
+        }
+
+        .slider-left.active {
+          fill: #1d1d1d; /* Активный цвет */
+
+          &:hover{
+            fill: #FBCE51;
+          }
+        }
+
+        .slider-right {
+          fill: #1d1d1d; /* Активный цвет */
+
+          &:hover{
+            fill: #FBCE51;
+          }
+        }
+
+        .slider-right.inactive {
+          fill: #acacac; /* Неактивный цвет */
+        }
+
+        @media (min-width: 768px) {
+          display: none;
         }
       }
 
