@@ -828,7 +828,7 @@ body {
   .main .chess-stages__content .slider-controls {
     display: flex;
     width: 200px;
-    padding: 8px 0;
+    padding: 24px 0;
     align-items: center;
     justify-content: space-between;
   }
